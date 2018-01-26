@@ -2,18 +2,39 @@
 <html>
 
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <title>Growler</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div id="growler">
-        <h2 v-html="appName"></h2>
-        <!-- binding to CSS classes -->
-        <p :class="[accentColor, intro]"> Hi there!</p>
-        <!-- this is the same as :class="{intro}" -->
-        <p :class="{'intro': true}">Bye!</p>
-    </div>
+    < <body>
+        <div class="container">
+            <br />
+            <p>
+                This example shows how to bind to an <code>input</code> field with a "text" type.
+            </p>
+
+            <div id="growler">
+                <input v-model="query" placeholder="Search...">
+                <br />
+  
+                <div>Searching for: {{ query }}</div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+            </div>
+        </footer>
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.min.js"></script>
     <script type="text/javascript"
       src="https://unpkg.com/axios/dist/axios.min.js"></script>
