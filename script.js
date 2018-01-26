@@ -1,6 +1,7 @@
 var growler = new Vue({
   el: "#growler",
   data: {
-    appName: 'Growler'
+    appName: 'Growler',
+    appVersion: '0.0.1'
   }
 });
