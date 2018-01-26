@@ -10,20 +10,25 @@
   </head>
 
   <body>
-    < <body>
+    <body>
         <div class="container">
             <br />
             <p>
-                This example shows how to bind to an <code>input</code> field with a "text" type.
+                This example shows how to bind to a <code>textarea</code> field.
             </p>
 
             <div id="growler">
-                <input v-model="query" placeholder="Search...">
-                <br />
-  
-                <div>Searching for: {{ query }}</div>
+                <textarea v-model="emailMessage" rows="4">
+                </textarea>
+                <br /><br />
+
+                <div>Your email will say:</div>
+                <p>{{ emailMessage }}</p>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="container">
 
         <footer class="footer">
             <div class="container">
