@@ -1,6 +1,7 @@
 var growler = new Vue({
   el: "#growler",
   data: {
-    appName: '<a href="/">Growler</a>' // binding to html
+    appName: '<a href="/">Growler</a>', // binding to html
+    "appLogo": 'logo.png'
   }
 });
