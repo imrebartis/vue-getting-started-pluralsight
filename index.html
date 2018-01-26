@@ -3,13 +3,16 @@
 
   <head>
    <title>Growler</title>
+   <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div id="growler">
-        <!-- binding to CSS properties -->
-        <h2 v-html="appName" :style="appStyle"></h2>
-        <p :style="[accentColor, paragraphs]"> Hi there!</p>
+        <h2 v-html="appName"></h2>
+        <!-- binding to CSS classes -->
+        <p :class="[accentColor, intro]"> Hi there!</p>
+        <!-- this is the same as :class="{intro}" -->
+        <p :class="{'intro': true}">Bye!</p>
     </div>
     <script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.min.js"></script>
     <script type="text/javascript"
