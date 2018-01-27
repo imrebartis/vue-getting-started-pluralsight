@@ -12,24 +12,30 @@
   <body>
     <body>
 
-          <div class="container">
-                <br />
-                <p>
-                    This example shows how to bind to a <code>input</code> field with a "checkbox" type.
-                </p>
-    
-                <div id="growler">
-                    <div class="form-check row">
+        <div class="container">
+            <br />
+            <p>
+                This example shows binding with a checkbox list.
+            </p>
+
+            <div id="growler">
+                <form>
+                    <div class="form-check row" style="padding-left:12px;">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" v-model="isPowerSyntaxEnabled">
+                            <input class="form-check-input" type="checkbox" value="beers" v-model="searchIndexes">
+                            Beers
                         </label>
                     </div>
-                    <br />
-    
-                    <small class="text-muted">selected: {{ isPowerSyntaxEnabled }}</small>                
-                </div>
+                    <div class="form-check row" style="padding-left:12px;">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="breweries" v-model="searchIndexes">
+                            Breweries
+                        </label>
+                    </div>
+
+                    <small class="text-muted">selected: {{ searchIndexes }}</small> 
+                </form>
             </div>
-    
         </div>
 
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
