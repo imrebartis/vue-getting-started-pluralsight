@@ -14,26 +14,35 @@
 
         <div class="container">
             <br />
-            <p>
-                This example shows binding with a checkbox list.
-            </p>
-
-            <div id="growler">
+            <div id="growler">            
                 <form>
-                    <div class="form-check row" style="padding-left:12px;">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="beers" v-model="searchIndexes">
-                            Beers
-                        </label>
-                    </div>
-                    <div class="form-check row" style="padding-left:12px;">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="breweries" v-model="searchIndexes">
-                            Breweries
-                        </label>
-                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <strong>Binding to a Single Selection</strong>
+                            <br />
 
-                    <small class="text-muted">selected: {{ searchIndexes }}</small> 
+                            <select v-model="selectedSearchIndex" class="form-control">
+                                <option value="beers">Beers</option>
+                                <option value="breweries">Breweries</option>
+                                <option value="distilleries">Distilleries</option>
+                                <option value="pubs">Pubs</option>
+                            </select>
+                            <small class="text-muted">selected: {{ selectedSearchIndex }}</small>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <strong>Binding to Multiple Selections</strong>
+                            <br />
+
+                            <select v-model="selectedSearchIndexes" multiple class="form-control">
+                                <option value="beers">Beers</option>
+                                <option value="breweries">Breweries</option>
+                                <option value="distilleries">Distilleries</option>
+                                <option value="pubs">Pubs</option>
+                            </select>
+                            <small class="text-muted">selected: {{ selectedSearchIndexes }}</small>
+                        </div>                        
+                    </div>
                 </form>
             </div>
         </div>
