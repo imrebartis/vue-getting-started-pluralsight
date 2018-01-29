@@ -5,11 +5,12 @@ var growler = new Vue({
   },
   methods: {
       executeSearch: function(v, e) {
-          var msg = 'Value: ' + v + '\n' +
+          var s = JSON.stringify(v);
+          var msg = 'Value: ' + s + '\n' +
               'Query: ' + this.query + '\n' +
               'Button: ' + e.target.innerText
           ;
           alert(msg);
       }                    
   }                
-});        
+});    
