@@ -15,16 +15,16 @@
         <div class="container">
             <br />
 
-            <p>This example shows how to attach to an event.</p>
+            <p>This example shows how to attach to an event. Specifically, this example shows the definition of an event handler.</p>
 
             <div id="growler">
                 <form class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
-                            <input v-model="query" type="search" class="form-control" placeholder="Search...">
-                            <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>                            
+                            <input v-model.trim="query" type="search" class="form-control" placeholder="Search...">
+                            <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>
                         </div>
-                    </div>                    
+                    </div>
                 </form>
             </div>
         </div>

@@ -4,8 +4,8 @@ var growler = new Vue({
       query: ''
   },
   methods: {
-      executeSearch: function() {
-          alert('Searching for: "' + this.query + '"');
+      executeSearch: function(event) {
+          alert('Query: "' + this.query +  '" Button:"' + event.target.innerText + '"');                        
       }
   }                
 });     
