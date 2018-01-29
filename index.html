@@ -14,19 +14,16 @@
 
         <div class="container">
             <br />
-            <div class="container">
+            <p>
+                This example shows the lazy binding behavior.<br />
+                This binding behavior uses the <code>change</code> event.
+            </p>
+
+            <div id="growler">
+                <input v-model.lazy="query" placeholder="Search...">
                 <br />
-                <p>
-                    This example shows the default binding behavior.<br />
-                    The default binding behavior uses the <code>input</code> event.
-                </p>
-    
-                <div id="growler">
-                    <input v-model="query" placeholder="Search...">
-                    <br />
-      
-                    <div>Searching for: {{ query }}</div>
-                </div>
+                <!-- the input will be shown below if user's clicked enter or clicked outside the input field -->
+                <div>Searching for: {{ query }}</div>
             </div>
         </div>
 
