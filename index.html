@@ -14,39 +14,21 @@
 
         <div class="container">
             <br />
-            <div id="app">            
-                <form>
-                    <p>
-                        The following examples use the <code>lazy</code> modifier. 
-                        The leading and trailing "|" are used to show leading and trailing whitespace.
-                    </p>
 
-                    <div class="form-group">
-                        <label for="searchInputField1" class="form-label">search (by default binding <code>oninput</code>)</label>
-                        <input v-model="query1" placeholder="Search..." id="searchInputField1" type="search" class="form-control">                        
-                        <small class="text-muted"><b>|</b>{{ query1 }}<b>|</b></small>                            
-                    </div>
+            <p>This example shows how to attach to an event.</p>
 
+            <div id="growler">
+                <form class="form-horizontal">
                     <div class="form-group">
-                        <label for="searchInputField2" class="form-label">search (by lazy binding)</label>
-                        <input v-model.lazy="query2" placeholder="Search..." id="searchInputField2" type="search" class="form-control">
-                        <small class="text-muted"><b>|</b>{{ query2 }}<b>|</b></small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="searchInputField2" class="form-label">search (by lazy binding with trim)</label>
-                        <input v-model.lazy.trim="query3" placeholder="Search..." id="searchInputField2" type="search" class="form-control">
-                        <small class="text-muted"><b>|</b>{{ query3 }}<b>|</b></small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="searchInputField4" class="form-label">search (by lazy binding as number)</label>
-                        <input v-model.lazy.number="query4" placeholder="Search..." id="searchInputField4" type="search" class="form-control">
-                        <small class="text-muted"><b>|</b>{{ query4 }}<b>|</b></small>
+                        <div class="input-group">
+                            <input v-model="query" type="search" class="form-control" placeholder="Search...">
+                            <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>                            
+                        </div>
                     </div>                    
                 </form>
             </div>
         </div>
+
 
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

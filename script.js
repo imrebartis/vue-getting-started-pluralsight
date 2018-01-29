@@ -1,9 +1,11 @@
-var app = new Vue({
-  el: '#app',
+var growler = new Vue({
+  el: '#growler',
   data: {
-      query1: '',
-      query2: '',
-      query3: '',
-      query4: ''
-  }
+      query: ''
+  },
+  methods: {
+      executeSearch: function() {
+          alert('Searching for: "' + this.query + '"');
+      }
+  }                
 });     
