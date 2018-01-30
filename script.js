@@ -1,21 +1,18 @@
 var growler = new Vue({
     el: '#growler',
     data: {
-        query: '',
-        isRunning: false,
-        history: ''
+        query: ''
     },
     methods: {
         executeSearch: function() {
-            this.isRunning = true;
-            this.history += 'Search button clicked. Query "' + this.query + '" was entered.\n';
-            //document.forms[0].submit();                        
+            if (this.query) {
+                document.forms[0].submit()
+            } else {
+                alert('Please enter a query')
+            }
         },
         buttonParentClick: function() {
-            this.history += 'Search button parent clicked.\n';
-        },
-        buttonGrandparentClick: function() {
-            this.history += 'Search button grandparent clicked.\n';
+            console.log('Parent click');
         }
     }
 });      
