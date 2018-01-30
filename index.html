@@ -15,18 +15,26 @@
         <div class="container">
             <br />
             <div id="growler">            
-                <p>
-                    This example shows how the <code>prevent</code> modifier behaves when applied on an ancestor element.
-                </p>
-                <!-- the prevent modifier prevents submit from reloading the page but doesn't affect event propagation -->
-                <form action="#" method="GET" class="form-horizontal">
-                    <div class="form-group" v-on:click.prevent="buttonParentClick">
-                        <input class="form-control" v-model="query" id="query" name="query" />
-                        <button v-on:click.prevent="executeSearch" type="submit" class="btn btn-primary">Search</button>
+                <form class="form-horizontal">
+                    <p>
+                        This example demonstrates the <code>stop</code> modifier applied on an ancestor.
+                    </p>
+                    <!-- here only parentClick & executeSearch will run -->
+                    <div v-on:click="grandparentClick">
+                        <div class="form-group" v-on:click.stop="parentClick">
+                            <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="form-group">
+                        <label for="logTextarea">Event Log</label>
+                        <textarea class="form-control" v-model="history" rows="4"></textarea>
                     </div>
                 </form>
             </div>
         </div>
+
 
 
 
