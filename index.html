@@ -14,20 +14,30 @@
 
         <div class="container">
             <br />
-
-            <p>This example shows how to pass a <code>Object</code> as a parameter with an inline statement</p>
-
-            <div id="growler">
+            <div id="growler">            
                 <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input v-model.trim="query" type="search" class="form-control" placeholder="please enter your query here.">
-                            <button v-on:click="executeSearch({ str:'token', num:12345, d:new Date() }, $event)" type="button" class="btn btn-primary">Search</button>                            
+                    <p>
+                        This example is intended to be used to demonstrate the propagation behavior of the <code>once</code> modifier.
+                    </p>
+
+                        <div class="form-group">
+                            <input class="form-control" type="search" v-model="query" autofocus />
+                            <div v-on:click="buttonGrandparentClick">                            
+                                <div v-on:click="buttonParentClick">
+                                    <button type="button" v-on:click.once="executeSearch" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
                         </div>
+
+                    <br />
+                    <div class="form-group">
+                        <label for="logTextarea">Event Log</label>
+                        <textarea class="form-control" v-model="history" rows="15"></textarea>
                     </div>                    
                 </form>
             </div>
         </div>
+
 
 
 
