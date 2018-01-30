@@ -11,27 +11,45 @@
 
   <body>
     <body>
-                <div class="container">
-                        <br />
-                        <div id="growler">            
-                            <form class="form-horizontal" v-on:submit.prevent action="/module-04/altering-events/reacting-to-keyed-events/example-02.html" method="GET">
-                                <p>
-                                    This example demonstrates handling the "enter" key press via the <code>enter</code> modifier.
-                                </p>
-            
-                                <div class="form-group">
-                                    <input class="form-control" type="search" v-model="query" v-on:keyup="evaluateKey" v-on:keyup.enter="executeSearch" autofocus />
-                                    <button type="button" v-on:click.once="executeSearch" class="btn btn-primary">Search</button>                        
-                                </div>
-            
-                                <br />
-                                <div class="form-group">
-                                    <label for="logTextarea">Event Log (<a href="#" v-on:click="clearHistory">clear</a>)</label>
-                                    <textarea class="form-control" v-model="history" rows="15"></textarea>
-                                </div>                    
-                            </form>
-                        </div>
+            <div class="container">
+                    <br />
+        
+                    <div id="growler">                
+                        <form style="width:100%;">
+                            <p>
+                                This example shows how to use the <code>right</code> mouse modifier.
+                            </p>
+        
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <strong><code>onclick</code> event with <code>right</code> modifier</strong><br />
+                                    <div class="event-block text-center" v-on:click.right="onBlockClick">
+                                        Click in this area with the right mouse button.
+                                    </div>
+                                </div>                        
+        
+                                <div class="col-6">
+                                    <strong><code>oncontextmenu</code> with <code>right</code> modifier</strong><br />
+                                    <div class="event-block text-center" v-on:contextmenu.prevent="onBlockClick">
+                                        Click in this area with the right mouse button.
+                                    </div>
+        
+                                    <ul id="myContextMenu" class="list-unstyled" tabindex="-1" v-if="showContextMenu" v-on:blur="closeContextMenu" v-bind:style="{ top:top, left:left }" style="position:fixed; background-color:lightgray; padding:1rem;">
+                                        <li><a href="#" v-on:click="onCopyClick">Copy</a></li>
+                                        <li><a href="#" v-on:click="onPasteClick">Paste</a></li>
+                                    </ul>
+                                </div>                        
+                            </div>
+        
+                            <br />
+                            <div class="form-group">
+                                <label for="logTextarea">Event Log (<a href="#" v-on:click="clearHistory">clear</a>)</label>
+                                <textarea class="form-control" v-model="history" rows="15"></textarea>
+                            </div>                    
+                        </form>
                     </div>
+             </div>
+        
 
 
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
