@@ -1,3 +1,6 @@
+Vue.config.keyCodes = {
+    sb: 32
+};
 var growler = new Vue({
     el: '#growler',
     data: {
@@ -5,14 +8,9 @@ var growler = new Vue({
         history: ''
     },
     methods: {
-        executeSearch: function() {
-            this.history += 'Search button clicked.\n';
-        },
-        parentClick: function() {
-            this.history += 'Search button parent clicked.\n';
-        },
-        grandparentClick: function() {
-            this.history += 'Search button grandparent clicked.\n\n';
+        openInfo: function(e) {
+            e.preventDefault();
+            this.history += 'Show app information.\n';
         },
         clearHistory: function() {
             this.history = '';
