@@ -17,17 +17,15 @@
             <div id="growler">            
                 <form class="form-horizontal">
                     <p>
-                        This example is intended to be used to demonstrate the propagation behavior of the <code>once</code> modifier.
+                        This example is intended to be used to demonstrate the <code>once</code> modifier.
                     </p>
 
-                        <div class="form-group">
-                            <input class="form-control" type="search" v-model="query" autofocus />
-                            <div v-on:click="buttonGrandparentClick">                            
-                                <div v-on:click="buttonParentClick">
-                                    <button type="button" v-on:click.once="executeSearch" class="btn btn-primary">Search</button>
-                                </div>
-                            </div>
+                    <div v-on:click="buttonGrandparentClick">
+                        <div class="form-group" v-on:click="buttonParentClick">
+                            <input class="form-control" type="search" v-model="query" v-bind:disabled="isRunning" autofocus />
+                            <button type="button" v-on:click.once="executeSearch" v-bind:disabled="isRunning" class="btn btn-primary">Search</button>
                         </div>
+                    </div>
 
                     <br />
                     <div class="form-group">
