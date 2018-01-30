@@ -17,11 +17,12 @@
             <div id="growler">            
                 <form class="form-horizontal">
                     <p>
-                        This example demonstrates the <code>stop</code> modifier applied on an ancestor.
+                        This example demonstrates the <code>self</code> modifier applied on an ancestor.
                     </p>
-                    <!-- here only parentClick & executeSearch will run -->
-                    <div v-on:click="grandparentClick">
-                        <div class="form-group" v-on:click.stop="parentClick">
+
+                    <div v-on:click="grandparentClick" style="background-color:#909090; padding:3rem;">
+                        <!-- when clicking the child button only executeSearch & grandparentClick will run -->
+                        <div class="form-group" v-on:click.self="parentClick" style="background-color:#D8D8D8; padding:3rem;">
                             <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>
                         </div>
                     </div>

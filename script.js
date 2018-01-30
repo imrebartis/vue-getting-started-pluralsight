@@ -15,4 +15,4 @@ var growler = new Vue({
             this.history += 'Search button grandparent clicked.\n';
         }
     }
-});   
+});     
