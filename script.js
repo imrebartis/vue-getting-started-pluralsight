@@ -12,7 +12,10 @@ var growler = new Vue({
             this.history += 'Search button parent clicked.\n';
         },
         grandparentClick: function() {
-            this.history += 'Search button grandparent clicked.\n';
+            this.history += 'Search button grandparent clicked.\n\n';
+        },
+        clearHistory: function() {
+            this.history = '';
         }
     }
-});     
+});        

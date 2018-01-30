@@ -1,8 +1,8 @@
-.intro {
-    font-family: 'Verdana';
-    margin: 0
+.grandparent {
+    background-color:#909090;
+    padding:2.0rem;
 }
-
-.accent-color {
-    color: #FF6A00
+.parent {
+    background-color:#D8D8D8;
+    padding:2.0rem;
 }

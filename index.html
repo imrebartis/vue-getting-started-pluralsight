@@ -12,29 +12,31 @@
   <body>
     <body>
 
-        <div class="container">
-            <br />
-            <div id="growler">            
-                <form class="form-horizontal">
-                    <p>
-                        This example demonstrates the <code>self</code> modifier applied on an ancestor.
-                    </p>
-
-                    <div v-on:click="grandparentClick" style="background-color:#909090; padding:3rem;">
-                        <!-- when clicking the child button only executeSearch & grandparentClick will run -->
-                        <div class="form-group" v-on:click.self="parentClick" style="background-color:#D8D8D8; padding:3rem;">
-                            <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>
-                        </div>
-                    </div>
-
+            <div class="container">
                     <br />
-                    <div class="form-group">
-                        <label for="logTextarea">Event Log</label>
-                        <textarea class="form-control" v-model="history" rows="4"></textarea>
+                    <div id="growler">            
+                        <form class="form-horizontal">
+                            <p>
+                                This example demonstrates chaining modifiers together.
+                                You can witness it by clicking the parent element.
+                            </p>
+        
+                            <div class="grandparent" v-on:click="grandparentClick">
+                                <!-- 'stop' ceases the event propagation + 'self' ensures
+                                the event handler isn't triggered by any of the descendants -->
+                                <div class="form-group parent" v-on:click.stop.self="parentClick">
+                                    <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+        
+                            <br />
+                            <div class="form-group">
+                                <label for="logTextarea">Event Log (<a href="#" v-on:click="clearHistory">clear</a>)</label>
+                                <textarea class="form-control" v-model="history" rows="4"></textarea>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>
 
 
 
