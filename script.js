@@ -16,4 +16,4 @@ var growler = new Vue({
             }
         }
     }
-});    
+});        

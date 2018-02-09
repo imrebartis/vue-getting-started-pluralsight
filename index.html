@@ -17,7 +17,7 @@
             <div id="growler">
                 <form style="width:100%;">
                     <p>
-                        This example shows how to use the <code>v-if</code>, <code>v-else-if</code>, and <code>v-else</code> directives.
+                        This example shows how to use the <code>v-show</code> directive.
                         Press the search button to generate a random number of search results.
                     </p>
 
@@ -27,13 +27,15 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Query Results</label>
-                        <p v-cloak>
-                            <div v-if="beers.length === 0">No beers were returned</div>
-                            <div v-else-if="beers.length === 1">1 beer was returned</div>
-                            <div v-else>{{ beers.length }} beers were returned</div>
-                        </p>
+                    <!-- The search results area -->
+                    <div>
+                        <div v-show="beers.length === 0">
+                            No beers were returned
+                        </div>
+
+                        <div v-show="beers.length > 0">
+                            [Beers will be rendered here]
+                        </div>
                     </div>
                 </form>
             </div>
