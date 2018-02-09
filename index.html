@@ -8,13 +8,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
 
-        <style type="text/css">
-            .event-block {
-                border-width: 1px;
-                border-style: solid;
-                padding:3rem;
-            }
-        </style>
     </head>
 
     <body>
@@ -24,24 +17,23 @@
             <div id="growler">
                 <form style="width:100%;">
                     <p>
-                        This example shows how to use the <code>v-cloak</code> directive.
+                        This example shows how to use the <code>v-if</code>, <code>v-else-if</code>, and <code>v-else</code> directives.
+                        Press the search button to generate a random number of search results.
                     </p>
 
-                    <div class="form-group row">
-                        <div class="col-6">
-                            <label for="logTextarea">Event Log (without <code>v-cloak</code>)</label>
-                            <div style="border:solid 1px #000; height:100px; padding-left:1rem;">
-                                <div>{{ history }}</div>
-                            </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>                            
                         </div>
+                    </div>
 
-                        <!-- the div below won't show {{ history }} during the first 3 sec only if you add this to css: [v-cloak] { display:none; } -->
-                        <div class="col-6">
-                            <label for="logTextarea">Event Log (with <code>v-cloak</code>)</label>
-                            <div style="border:solid 1px #000; height:100px; padding-left:1rem;">
-                                <div v-cloak>{{ history }}</div>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label>Query Results</label>
+                        <p v-cloak>
+                            <div v-if="beers.length === 0">No beers were returned</div>
+                            <div v-else-if="beers.length === 1">1 beer was returned</div>
+                            <div v-else>{{ beers.length }} beers were returned</div>
+                        </p>
                     </div>
                 </form>
             </div>
