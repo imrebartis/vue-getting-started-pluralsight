@@ -21,10 +21,11 @@
                             </p>
         
                             <nav>
-                                <ul class="pagination">
-                                    <li v-for="page in pages" class="page-item">
-                                        <a v-bind:href="page.url" class="page-link">{{ page.number }}</a>
-                                    </li>
+                                    <div v-for="page in pages">
+                                            <b>Page: {{ page.number }}</b>
+                                            <div v-for="section in page.sections">{{page.number}}-{{ section }}</div>
+                                            <br />
+                                    </div>
                                 </ul>
                             </nav>
                         </form>
