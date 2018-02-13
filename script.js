@@ -7,14 +7,24 @@ var growler = new Vue({
             'Ahool Ale',
             'Tikibalang Barley Wine'
         ],
-        newBeerName: ''
+        removed: []
     },
     methods: {
-        spliceClick: function() {
-            // remove everything starting with the item at index 3
-            // here Tikibalang Barley Wine (the only one that gets removed)
-            var removed = this.beers.splice(3);
-            console.log(removed);
+        removeClick: function() {
+            this.removed = this.beers.splice(1, 2);
+        },
+        // adding back the items removed with removeClick:
+        replaceClick: function() {
+            try {                            
+                for (var i=0; i<this.removed.length; i++) {
+                    // we're adding beers after the first item of the array; 
+                    // since we don't want to remove items, the second param is 0;
+                    // this.removed[i] adds the name of the item
+                    this.beers.splice(1, 0, this.removed[i]);
+                }
+            } catch (ex) {
+                console.log(ex);
+            }
         }
     }                
-});  
+});
