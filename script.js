@@ -1,17 +1,20 @@
 var growler = new Vue({
     el: '#growler',
     data: {
-        beers: [
-            'Tikibalang Barley Wine',
-            'Hyote Chocolate Stout',
-            'Pope Lick Porter',
-            'Ahool Ale',
-            'North Adjule Lager'
+        abv: [
+            9.7,
+            12.2,
+            5.7,
+            11.1,
+            2.9
         ]
     },
     methods: {
-        sortClick: function() {
-            this.beers.sort();
+
+        numericallySortClick: function() {
+            this.abv.sort(function(v1, v2) {
+                return v1 - v2; // ascending order
+            });
         }
     }                
-});   
+});        

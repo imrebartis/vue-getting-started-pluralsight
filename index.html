@@ -14,20 +14,26 @@
             <div class="container">
                     <br />
         
-                    <p>This example shows how to use <code>sort</code> function on an array of strings.</p>
+                    <p>This example shows how to use <code>sort</code> function on an array of numbers.</p>
         
                     <div id="growler">
                         <form style="width:100%;">
-                            <ul class="list-unstyled">
-                                <li><strong>Beers</strong></li>
-                                <li v-for="beer in beers">{{ beer }}</li>
-                            </ul>
-        
-                            <button type="button" v-on:click="sortClick">Sort</button>
+                            <div class="row">
+                                <div class="col-2">
+                                    <ul class="list-unstyled" v-if="abv.length > 0">
+                                        <li><strong>Numeric Sort</strong></li>
+                                        <li v-for="beer in abv">{{ beer }}</li>
+                                    </ul>                                                        
+                                </div>
+
+                                <div class="col-1">
+                                        <button type="button" class="btn btn-secondary" v-on:click="numericallySortClick">Sort</button>                            
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
-                
+
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
