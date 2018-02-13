@@ -11,10 +11,10 @@ var growler = new Vue({
     },
     methods: {
         spliceClick: function() {
-            // removing the 3 beers starting at index 1
-            // i.e. everything except Pope Lick Porter
-            var removed = this.beers.splice(1, 3);
+            // remove everything starting with the item at index 3
+            // here Tikibalang Barley Wine (the only one that gets removed)
+            var removed = this.beers.splice(3);
             console.log(removed);
         }
     }                
-});     
+});  
