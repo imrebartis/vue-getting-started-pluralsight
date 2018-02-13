@@ -17,12 +17,14 @@
                     <div id="growler">
                         <form style="width:100%;">
                             <p>
-                                This example shows how to use the <code>v-for</code> directive to traverse object properties.
+                                This example shows how to use the <code>v-for</code> directive to iterate through an array of objects.
                             </p>
         
                             <nav>
-                                <ul>
-                                    <li v-for="(v, k, i) in currentUser">{{i +1}}) {{k}} - {{v}}</li>
+                                <ul class="pagination">
+                                    <li v-for="page in pages" class="page-item">
+                                        <a v-bind:href="page.url" class="page-link">{{ page.number }}</a>
+                                    </li>
                                 </ul>
                             </nav>
                         </form>
