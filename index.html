@@ -17,31 +17,20 @@
             <div id="growler">
                 <form style="width:100%;">
                     <p>
-                        This example shows how to use the <code>v-show</code> directive.
-                        Press the search button to generate a random number of search results.
+                        This example shows how to use the <code>v-for</code> directive to loop a specific number of times.
                     </p>
 
-                    <div class="form-group">
-                        <div class="input-group">
-                            <button v-on:click="executeSearch" type="button" class="btn btn-primary">Search</button>                            
-                        </div>
-                    </div>
-
-                    <!-- The search results area -->
-                    <div>
-                        <div v-show="beers.length === 0">
-                            No beers were returned
-                        </div>
-
-                        <div v-show="beers.length > 0">
-                            [Beers will be rendered here]
-                        </div>
-                    </div>
+                    <nav>
+                        <ul class="pagination">
+                            <!-- page = alias (starts with 1!, pageCount = delimiter -->
+                            <li v-for="page in pageCount" class="page-item">
+                                <a href="#" v-on:click="search(page);" class="page-link">{{ page }}</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </form>
             </div>
         </div>
-        
-
 
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
