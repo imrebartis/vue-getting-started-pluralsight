@@ -14,7 +14,7 @@
             <div class="container">
                     <br />
         
-                    <p>This example shows how to use the <code>unshift</code> function with an array.</p>
+                    <p>This example shows how to use the <code>shift</code> function with an array.</p>
         
                     <div id="growler">
                         <form style="width:100%;">
@@ -28,6 +28,7 @@
                             <input type="text" class="form-control" v-model="newBeerName" placeholder="Enter a new beer name" />                    
                             <ul class="list-inline" style="margin-top:0.4rem;">
                                 <li class="list-inline-item"><button type="button" class="btn btn-primary" v-on:click="unshiftClick">Unshift onto Array</button></li>
+                                <li class="list-inline-item"><button type="button" class="btn btn-secondary" v-on:click="shiftClick">Shift First Item</button></li>
                             </li>
                         </form>
                     </div>
