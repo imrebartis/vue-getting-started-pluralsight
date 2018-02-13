@@ -4,14 +4,16 @@ var growler = new Vue({
         beers: [
             'Ahool Ale',
             'Hyote Chocolate Stout',
-            'North Adjule Lager',                        
-            'Pope Lick Porter',
             'Tikibalang Barley Wine'
-        ]
+        ],
+        newBeerName: '',
+        count: 3// This property exists to test the fact that the push function returns the new length
     },
     methods: {
-        reverseClick: function() {
-            this.beers.reverse();
+        pushClick: function() {
+            this.count = this.beers.push(this.newBeerName);
+            this.newBeerName = '';
+            console.log(this.count)
         }
     }                
-});     
+});    
