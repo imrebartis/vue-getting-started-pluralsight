@@ -24,9 +24,7 @@ var growler = new Vue({
         subTotal: 0.00
     },
     watch: {
-        shoppingCart: function() {
-            this.updateSubTotal();
-        }
+        shoppingCart: 'updateSubTotal'
     },
     created: function() {
         this.updateSubTotal();
@@ -44,4 +42,4 @@ var growler = new Vue({
             this.shoppingCart.push(beer);
         }
     }
-});        
+}); 
