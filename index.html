@@ -13,24 +13,34 @@
     <body>
             <div class="container">
                     <br />
+                    <div id="growler">            
+                        <p>An example of a watched property.</p>
         
-                    <p>
-                        This example shows how to use the <code>set</code> function to update an <code>Array</code> element.
-                    </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Beer</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
         
-                    <div id="growler">
-                        <form style="width:100%;">
-                            <ul class="list-unstyled">
-                                <li><strong>Beers: {{ this.beers.length }}</strong></li>
-                                <li v-for="beer in beers">{{ beer }}</li>
-                            </ul>
+                            <tbody>
+                                <tr v-for="beer in beers">
+                                    <td>{{ beer.name }}</td>
+                                    <td>{{ beer.price }}</td>
+                                    <td><button class="btn btn-warning" v-on:click="buy(beer)">buy</button></td>
+                                </tr>
+                            </tbody>
         
-                            <br />
-        
-                            <ul class="list-inline" style="margin-top:0.4rem;">
-                                <li class="list-inline-item"><button type="button" class="btn btn-primary" v-on:click="updateClick">Update</button></li>
-                            </li>
-                        </form>
+                            <tfoot>
+                                <tr>
+                                    <td class="footer">Subtotal</td>
+                                    <td class="footer">{{ subTotal }}</td>
+                                    <td class="footer"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
         
