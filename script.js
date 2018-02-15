@@ -12,9 +12,15 @@ var growler = new Vue({
             if (!value) {
                 return empty;
             }
-            value = value.toString();
-            value = value.replace(/\./g, '');// Remove all periods
-            return value.toUpperCase();// Convert to upper case
+            
+            console.log('convertIBU: ' + value);
+            return value.toString();
+        },
+        removePeriods: function(value) {
+            return value.replace(/\./g, '');               
+        },
+        toUpperCase: function(value) {
+            return value.toUpperCase();
         }
-    }                
-});        
+    }
+});

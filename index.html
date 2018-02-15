@@ -18,16 +18,17 @@
                     <div id="growler">
                         <form style="width:100%;">
                             <p>
-                                This example shows how filters work
+                                This example shows how to call filters programmatically.
                             </p>
         
                             <div v-for="result in results">
                                     <div>{{ result.name }}</div>
-                                    <small class="text-muted">{{ result.ibu | convertIBU('--') }}</small>
-                                </div>            
+                                    <small class="text-muted">{{ result.ibu | convertIBU('--') | removePeriods | toUpperCase }}</small>
+                            </div>
                         </form>
                     </div>
-                </div>
+            </div>
+        
         
         
 
