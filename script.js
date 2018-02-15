@@ -4,8 +4,14 @@ var growler = new Vue({
         canConnect: false
     },
     computed: {
-        isOnline: function() {
-            return this.canConnect ? 'Yes' : 'No';
+        isOnline: {
+            get: function () {
+                return this.canConnect ? 'Yes' : 'No';                            
+            },
+            set: function(newValue) {
+                console.log('was: ' + this.canConnect + ' now:' + newValue);
+                this.canConnect = newValue;
+            }
         }
     },
     created: function() {
@@ -18,4 +24,4 @@ var growler = new Vue({
             })
         ;
     }
-});
+});        
