@@ -22,9 +22,9 @@
                             </p>
         
                             <div v-for="result in results">
-                                <div>{{ result.name }}</div>
-                                <small class="text-muted">{{ result.ibu | convertIBU }}</small>
-                            </div>
+                                    <div>{{ result.name }}</div>
+                                    <small class="text-muted">{{ result.ibu | convertIBU('--') }}</small>
+                                </div>            
                         </form>
                     </div>
                 </div>
