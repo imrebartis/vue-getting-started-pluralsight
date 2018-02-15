@@ -11,36 +11,12 @@
     </head>
 
     <body>
+         
             <div class="container">
                     <br />
                     <div id="growler">            
-                        <p>An example of a watched property.</p>
-        
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Beer</th>
-                                    <th>Price</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-        
-                            <tbody>
-                                <tr v-for="beer in beers">
-                                    <td>{{ beer.name }}</td>
-                                    <td>{{ beer.price }}</td>
-                                    <td><button class="btn btn-warning" v-on:click="buy(beer)">buy</button></td>
-                                </tr>
-                            </tbody>
-        
-                            <tfoot>
-                                <tr>
-                                    <td class="footer">Subtotal</td>
-                                    <td class="footer">{{ shoppingCart.subTotal }}</td>
-                                    <td class="footer"></td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <p>An example of a computed property.</p>
+                        <div>Online? {{ isOnline }}</div>
                     </div>
                 </div>
         
