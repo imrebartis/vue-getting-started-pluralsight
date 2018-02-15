@@ -23,7 +23,9 @@
         
                             <div v-for="result in results">
                                     <div>{{ result.name }}</div>
-                                    <small class="text-muted">{{ result.ibu | convertIBU('--') | removePeriods | toUpperCase }}</small>
+                                    <small class="text-muted">with methods: {{ toUpperCase(removePeriods(result.ibu)) }}</small>
+                                    <small class="text-muted">with filters: {{ result.ibu | convertIBU('--') | removePeriods | toUpperCase }}</small>
+                                </div>
                             </div>
                         </form>
                     </div>

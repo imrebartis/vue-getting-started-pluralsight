@@ -12,15 +12,26 @@ var growler = new Vue({
             if (!value) {
                 return empty;
             }
-            
             console.log('convertIBU: ' + value);
             return value.toString();
         },
         removePeriods: function(value) {
-            return value.replace(/\./g, '');               
+            console.log('removePeriods: ' + value);
+            return value.replace(/\./g, '');
         },
         toUpperCase: function(value) {
+            console.log('toUpperCase: ' + value);
             return value.toUpperCase();
         }
-    }
-});
+    },
+    methods: {
+        removePeriods: function(v) {
+            if (!v) { return ''; }
+            return v.replace(/\./g, '');
+        },
+        toUpperCase: function(v) {
+            if (!v) { return ''; }
+            return v.toUpperCase();                        
+        }
+    }          
+});        
