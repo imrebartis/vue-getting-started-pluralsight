@@ -14,11 +14,21 @@
          
             <div class="container">
                     <br />
-                    <div id="growler">            
-                        <p>An example of a computed property.</p>
-                        <div>Online? {{ isOnline }}</div>
+        
+                    <div id="growler">
+                        <form style="width:100%;">
+                            <p>
+                                This example shows how filters work
+                            </p>
+        
+                            <div v-for="result in results">
+                                <div>{{ result.name }}</div>
+                                <small class="text-muted">{{ result.ibu | convertIBU }}</small>
+                            </div>
+                        </form>
                     </div>
                 </div>
+        
         
 
         <!-- jQuery first, then Tether, then Bootstrap JS. -->

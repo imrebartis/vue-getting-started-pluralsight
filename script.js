@@ -1,27 +1,23 @@
 var growler = new Vue({
     el: '#growler',
     data: {
-        canConnect: false
+        results: [
+            { name: 'Ahool Ale', ibu: '33 i.b.u.' },
+            { name: 'Agogwe Ale', ibu: '28 i.b.u.' },
+            { name: 'Aswang Ale', ibu: '31 i.b.u.' }
+        ]
     },
-    computed: {
-        isOnline: {
-            get: function () {
-                return this.canConnect ? 'Yes' : 'No';                            
-            },
-            set: function(newValue) {
-                console.log('was: ' + this.canConnect + ' now:' + newValue);
-                this.canConnect = newValue;
+    // filters are used for text conversions
+    filters: {
+        convertIBU: function(value) {
+            if (!value) {
+                return '';
             }
+            value = value.toString();
+            // Remove all periods:
+            value = value.replace(/\./g, '');
+            // Convert to upper case:
+            return value.toUpperCase();
         }
-    },
-    created: function() {
-        axios.get('https://www.ecofic.com')
-            .then(function (res) {
-                growler.canConnect = true;
-            })
-            .catch(function (err) {
-                growler.canConnect = false;
-            })
-        ;
-    }
-});        
+    }                
+});
